@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Quote</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Daily Quote</h1>
+    <p>Loading...</p>
+    <button>New Quote</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+<div class="form-container">
+  <h2>Submit a New Quote</h2>
+  <form id="quote-form">
+    <input type="text" id="quote-input" placeholder="Quote text" required />
+    <input type="text" id="author-input" placeholder="Author" required />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</html>

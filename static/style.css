@@ -1,0 +1,102 @@
+/* Global page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+/* Main quote box */
+.container {
+  background: rgba(0, 0, 0, 0.7); /* translucent overlay */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+/* Headline */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Quote text */
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Author text */
+.container p + p {
+  font-style: italic;
+  color: #ccc;
+  margin-top: -0.5rem;
+}
+
+/* Quote button */
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Submission form container */
+.form-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Form inputs */
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Submit button */
+form button {
+  background-color: #28a745;
+}
+
+form button:hover {
+  background-color: #1e7e34;
+}
+
+/* Confirmation message */
+#form-message {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
