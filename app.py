@@ -44,6 +44,30 @@ def submit_quote():
         "author": data.get("author", "Unknown")
     }
 
+@app.route('/quotes')
+def get_all_quotes():
+    return jsonify(quotes)
+
+@app.route('/quote/<int:index>', methods=['DELETE'])
+def delete_quote(index):
+    if 0 <= index < len(quotes):
+        removed = quotes.pop(index)
+        save_quotes(quotes)
+        return jsonify({"message": "Quote deleted", "quote": removed})
+    return jsonify({"error": "Quote not found"}), 404
+
+@app.route('/quote/<int:index>', methods=['PUT'])
+def update_quote(index):
+    if 0 <= index < len(quotes):
+        data = request.json
+        quotes[index] = {
+            "text": data.get("text", quotes[index]["text"]),
+            "author": data.get("author", quotes[index]["author"])
+        }
+        save_quotes(quotes)
+        return jsonify({"message": "Quote updated", "quote": quotes[index]})
+    return jsonify({"error": "Quote not found"}), 404
+
     if new_quote["text"]:
         quotes.append(new_quote)
         save_quotes(quotes)
